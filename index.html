@@ -225,6 +225,10 @@ form{display:flex;flex-direction:column;gap:14px}
 .field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:inherit;font-size:.95rem;transition:.25s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);background:rgba(255,255,255,.06)}
 .field textarea{resize:vertical;min-height:80px}
+.field select{color:var(--ink)}
+/* читаемый выпадающий список: тёмный текст на белом фоне (нативный список ОС) */
+.field select option{background-color:#ffffff;color:#14101a}
+.field select option:checked{background-color:#e0167f;color:#ffffff}
 .form-note{font-size:.76rem;color:var(--muted-2);text-align:center}
 .form-ok{display:none;text-align:center;padding:30px;background:rgba(224,22,127,.1);border:1px solid var(--brand);border-radius:14px}
 .form-ok.show{display:block}

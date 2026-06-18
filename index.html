@@ -274,8 +274,8 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 .tl-card p{color:var(--muted);font-size:.92rem}
 
 /* ---------- video reviews ---------- */
-.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto}
-.vcard{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid var(--line-2);cursor:pointer;background:linear-gradient(160deg,#311637,#140f18);box-shadow:var(--shadow);transition:.3s}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto}
+.vcard{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--line-2);cursor:pointer;background:linear-gradient(160deg,#311637,#140f18);box-shadow:var(--shadow);transition:.3s}
 .vcard:hover{transform:translateY(-5px);border-color:var(--brand)}
 .vcard>img,.vcard>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vcard .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(11,9,12,.05) 40%,rgba(11,9,12,.82));display:flex;flex-direction:column;justify-content:space-between;padding:16px}
@@ -289,8 +289,8 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 /* video modal */
 .vmodal{position:fixed;inset:0;background:rgba(5,4,6,.94);backdrop-filter:blur(7px);z-index:210;display:none;align-items:center;justify-content:center;padding:24px}
 .vmodal.open{display:flex}
-.vmodal .vwrap{position:relative;width:min(420px,92vw)}
-.vmodal video{width:100%;max-height:84vh;border-radius:16px;background:#000;box-shadow:var(--shadow);display:block}
+.vmodal .vwrap{position:relative;width:min(900px,92vw)}
+.vmodal video,.vmodal iframe{width:100%;aspect-ratio:16/9;max-height:84vh;border:0;border-radius:16px;background:#000;box-shadow:var(--shadow);display:block}
 .vmodal .vmsg{display:none;color:var(--muted);text-align:center;padding:54px 26px;border:1px dashed var(--line-2);border-radius:16px;background:var(--bg-2)}
 .vmodal .vmsg .ico{font-size:2.2rem;display:block;margin-bottom:10px}
 .vmodal .x{position:absolute;top:-44px;right:0;font-size:2rem;color:#fff;cursor:pointer;background:none;border:0;line-height:1}
@@ -315,6 +315,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   .plan.featured{order:-1}
   .trust .row{grid-template-columns:repeat(2,1fr);gap:18px}
   .gallery{grid-template-columns:repeat(3,1fr)}
+  .videos{grid-template-columns:repeat(2,1fr);max-width:640px}
 }
 @media(max-width:560px){
   .wrap{padding:0 18px}
@@ -329,7 +330,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   .author-cred{grid-template-columns:1fr}
   .float-badge{display:none}
   .cta-box{padding:30px 20px}
-  .videos{grid-template-columns:repeat(2,1fr);gap:14px}
+  .videos{grid-template-columns:1fr;gap:16px;max-width:380px}
   .timeline::before{left:24px}
   .tl-item{padding-left:70px}
   .tl-node{width:50px;height:50px}
@@ -655,22 +656,11 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       <h2>Истории учеников <span class="grad">вживую</span></h2>
       <p>Выпускники рассказывают о результатах и пути в профессии.</p>
     </div>
-    <!-- Чтобы добавить видео: положите файлы otzyv-1.mp4, otzyv-2.mp4, otzyv-3.mp4 в папку landing/videos/.
-         Подробная инструкция — в файле landing/videos/Как-добавить-видео.txt -->
-    <div class="videos">
-      <div class="vcard reveal" data-video="videos/otzyv-1.mp4">
-        <div class="veil"><span class="badge-soon">Скоро</span><div class="vmeta"><b>Отзыв ученика</b><span>Групповое обучение</span></div></div>
-        <div class="vplay"></div>
-      </div>
-      <div class="vcard reveal" data-video="videos/otzyv-2.mp4">
-        <div class="veil"><span class="badge-soon">Скоро</span><div class="vmeta"><b>Отзыв ученика</b><span>Индивидуальное обучение</span></div></div>
-        <div class="vplay"></div>
-      </div>
-      <div class="vcard reveal" data-video="videos/otzyv-3.mp4">
-        <div class="veil"><span class="badge-soon">Скоро</span><div class="vmeta"><b>Отзыв ученика</b><span>Наставничество</span></div></div>
-        <div class="vplay"></div>
-      </div>
-    </div>
+    <!-- ВИДЕО-ОТЗЫВЫ С YOUTUBE.
+         Ссылки на ролики задаются НИЖЕ, в начале тега <script> — в списке YT_REVIEWS.
+         Там же можно добавить новые карточки или убрать лишние.
+         Подробная инструкция — в файле "Как-обновить-видео-отзывы.txt". -->
+    <div class="videos" id="videos"></div>
   </div>
 </section>
 
@@ -790,6 +780,18 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   var TG_CHAT_ID   = "330479795";  // личный чат владельца
   var LEAD_EMAIL   = "mr.kodymusic@gmail.com";
 
+  // ===== ВИДЕО-ОТЗЫВЫ (YouTube) =====
+  // Вставьте ссылку на ролик YouTube в поле url. Подойдёт любой формат:
+  //   https://youtu.be/XXXXXXXXXXX
+  //   https://www.youtube.com/watch?v=XXXXXXXXXXX
+  //   https://www.youtube.com/shorts/XXXXXXXXXXX   (или просто ID ролика)
+  // Пустой url = карточка показывает «Скоро». Можно добавлять/удалять записи.
+  var YT_REVIEWS = [
+    { url: "", name: "Отзыв ученицы", note: "Групповое обучение" },
+    { url: "", name: "Отзыв ученика",  note: "Индивидуальное обучение" },
+    { url: "", name: "Отзыв ученицы", note: "Наставничество" }
+  ];
+
   // year
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -863,33 +865,55 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   function closeLb(){ lb.classList.remove('open'); }
   document.getElementById('lb-close').addEventListener('click', closeLb);
   lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
-  // video reviews modal (video element is created on demand so an empty
-  // <video> never blocks initial load / rendering)
+  // video reviews (YouTube). Cards are built from YT_REVIEWS; clicking opens
+  // the YouTube player in a modal. Empty url -> "Скоро" placeholder card.
   var vmodal = document.getElementById('video-modal');
   var vmPlayer = document.getElementById('vm-player');
   var vmMsg = document.getElementById('vm-msg');
-  function clearVideo(){
-    var v = vmPlayer.querySelector('video');
-    if(v){ try{ v.pause(); }catch(e){} v.removeAttribute('src'); try{ v.load(); }catch(e){} v.remove(); }
+
+  function ytId(u){
+    if(!u) return '';
+    u = String(u).trim();
+    if(/^[\w-]{11}$/.test(u)) return u;
+    var m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/|live\/))([\w-]{11})/);
+    return m ? m[1] : '';
   }
-  function openVModal(src){
-    clearVideo();
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function clearPlayer(){ vmPlayer.innerHTML = ''; }
+  function openVModal(id){
+    clearPlayer();
     vmodal.classList.add('open');
-    if(src){
+    if(id){
       vmMsg.style.display = 'none';
-      var v = document.createElement('video');
-      v.controls = true; v.setAttribute('playsinline',''); v.src = src;
-      v.addEventListener('error', function(){ clearVideo(); vmMsg.style.display = 'block'; });
-      vmPlayer.appendChild(v);
-      v.play().catch(function(){});
+      var ifr = document.createElement('iframe');
+      ifr.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      ifr.title = 'Видео-отзыв';
+      ifr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      ifr.setAttribute('allowfullscreen', '');
+      vmPlayer.appendChild(ifr);
     } else {
       vmMsg.style.display = 'block';
     }
   }
-  function closeVModal(){ vmodal.classList.remove('open'); clearVideo(); }
-  document.querySelectorAll('.vcard').forEach(function(card){
-    card.addEventListener('click', function(){ openVModal(card.getAttribute('data-video')); });
-  });
+  function closeVModal(){ vmodal.classList.remove('open'); clearPlayer(); }
+
+  var videosWrap = document.getElementById('videos');
+  if(videosWrap && typeof YT_REVIEWS !== 'undefined'){
+    YT_REVIEWS.forEach(function(r){
+      var id = ytId(r.url);
+      var card = document.createElement('div');
+      card.className = 'vcard';
+      var media = id ? '<img src="https://img.youtube.com/vi/' + id + '/maxresdefault.jpg" alt="" onerror="this.onerror=null;this.src=\'https://img.youtube.com/vi/' + id + '/hqdefault.jpg\'">' : '';
+      var top = id ? '<span></span>' : '<span class="badge-soon">Скоро</span>';
+      card.innerHTML = media +
+        '<div class="veil">' + top +
+        '<div class="vmeta"><b>' + esc(r.name) + '</b><span>' + esc(r.note) + '</span></div></div>' +
+        '<div class="vplay"></div>';
+      card.addEventListener('click', function(){ openVModal(id); });
+      videosWrap.appendChild(card);
+    });
+  }
   document.getElementById('vm-close').addEventListener('click', closeVModal);
   vmodal.addEventListener('click', function(e){ if(e.target === vmodal) closeVModal(); });
 

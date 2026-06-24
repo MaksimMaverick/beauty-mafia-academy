@@ -117,11 +117,11 @@ h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;line-height:1.06;let
 
 /* TRUST STRIP */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-.trust .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:26px 0}
-.trust .item{display:flex;align-items:center;gap:14px;justify-content:center}
-.trust .ico{font-size:1.4rem}
-.trust .item b{font-family:'Oswald',sans-serif;font-weight:600;display:block;font-size:.96rem}
-.trust .item span{font-size:.78rem;color:var(--muted-2)}
+.trust .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:38px 0}
+.trust .item{display:flex;align-items:center;gap:18px;justify-content:center}
+.trust .ico{font-size:4.2rem;line-height:1;flex-shrink:0}
+.trust .item b{font-family:'Oswald',sans-serif;font-weight:600;display:block;font-size:1.05rem}
+.trust .item span{font-size:.8rem;color:var(--muted-2)}
 
 /* PAIN CARDS */
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -150,11 +150,14 @@ h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;line-height:1.06;let
 .mcard p{color:var(--muted);font-size:.88rem;line-height:1.6}
 
 /* AUDIENCE */
-.audience-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:860px;margin:0 auto}
-.aud-item{display:flex;align-items:flex-start;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:.3s}
-.aud-item:hover{border-color:var(--line-2);transform:translateX(4px)}
-.aud-item .chk{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;flex-shrink:0;font-weight:700;margin-top:2px}
-.aud-item p{color:var(--ink);font-size:.93rem;line-height:1.55}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.aud-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.aud-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.aud-photo{width:100%;height:230px;object-fit:cover;object-position:center;display:block;transition:transform .5s ease}
+.aud-card:hover .aud-photo{transform:scale(1.06)}
+.aud-body{padding:18px 20px;display:flex;gap:12px;align-items:flex-start;flex:1}
+.aud-body .chk{width:30px;height:30px;min-width:30px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:700;margin-top:2px}
+.aud-body p{color:var(--ink);font-size:.91rem;line-height:1.55}
 
 /* OUTCOMES */
 .outcomes{background:var(--bg-2);border-top:1px solid var(--line)}
@@ -237,7 +240,7 @@ footer .back-link:hover{color:var(--brand)}
 @media(max-width:960px){
   .trust .row{grid-template-columns:repeat(2,1fr)}
   .mystery-cards{grid-template-columns:1fr}
-  .audience-list{grid-template-columns:1fr}
+  .audience-grid{grid-template-columns:repeat(2,1fr)}
   .outcome-grid{grid-template-columns:1fr}
   .author-grid{grid-template-columns:1fr;gap:32px}
   .author-photo{max-width:380px;margin:0 auto}
@@ -245,11 +248,13 @@ footer .back-link:hover{color:var(--brand)}
 }
 @media(max-width:720px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
+  .audience-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .nav-links,.nav .btn{display:none}
   .burger{display:flex}
   .pain-grid{grid-template-columns:1fr}
+  .audience-grid{grid-template-columns:1fr}
   .trust .row{grid-template-columns:1fr;gap:14px}
   .info-box{padding:28px 20px}
   .countdown{gap:8px}
@@ -454,31 +459,56 @@ footer .back-link:hover{color:var(--brand)}
       <span class="eyebrow">Для кого вебинар</span>
       <h2>Этот вебинар <span class="grad">для тебя</span>, если хочешь:</h2>
     </div>
-    <div class="audience-list">
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p>Получить <strong>перспективную и востребованную профессию</strong> в 2026–2027 году в США</p>
+    <div class="audience-grid">
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-02.jpg" alt="Профессия мастера по волосам" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p>Получить <strong>перспективную и востребованную профессию</strong> в 2026–2027 году в США</p>
+        </div>
       </div>
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p>Начать <strong>зарабатывать от $80–100 в час</strong> и влиять на свой доход напрямую</p>
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-05.jpg" alt="Высокий заработок от $80 в час" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p>Начать <strong>зарабатывать от $80–100 в час</strong> и влиять на свой доход напрямую</p>
+        </div>
       </div>
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p><strong>Формировать свой комфортный график</strong> и работать тогда, когда тебе удобно</p>
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-08.jpg" alt="Свободный удобный график" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p><strong>Формировать свой комфортный график</strong> и работать тогда, когда тебе удобно</p>
+        </div>
       </div>
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p><strong>Путешествовать часто</strong> и не зависеть от расписания чужой компании</p>
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-10.jpg" alt="Путешествовать часто" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p><strong>Путешествовать часто</strong> и не зависеть от расписания чужой компании</p>
+        </div>
       </div>
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p><strong>Уделять больше времени семье и близким</strong>, не жертвуя при этом доходом</p>
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-03.jpg" alt="Больше времени для семьи" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p><strong>Уделять больше времени семье и близким</strong>, не жертвуя при этом доходом</p>
+        </div>
       </div>
-      <div class="aud-item reveal">
-        <div class="chk">✓</div>
-        <p>Найти своё место на <strong>американском рынке красоты</strong> и построить личный бренд</p>
+
+      <div class="aud-card reveal">
+        <img class="aud-photo" src="../images/result-11.jpg" alt="Американский рынок красоты" />
+        <div class="aud-body">
+          <div class="chk">✓</div>
+          <p>Найти своё место на <strong>американском рынке красоты</strong> и построить личный бренд</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>

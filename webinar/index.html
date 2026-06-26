@@ -96,7 +96,9 @@ h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;line-height:1.06;let
 .hero h1 .pre{font-family:'Sacramento',cursive;font-size:.33em;color:var(--gold);display:block;font-weight:400;letter-spacing:1px;margin-bottom:4px;text-transform:none}
 .hero h1 .hi{color:var(--brand-2)}
 .hero h1 .go{color:var(--gold)}
-.hero .sub{font-size:1.1rem;color:var(--muted);max-width:620px;margin:0 auto 38px;line-height:1.7}
+.hero .sub{font-size:1.1rem;color:var(--muted);max-width:620px;margin:0 auto 38px;line-height:1.7;text-wrap:balance}
+.desk-br{display:block}
+@media(max-width:600px){.desk-br{display:none}}
 
 /* Countdown */
 .countdown{display:flex;justify-content:center;gap:14px;margin-bottom:36px;flex-wrap:wrap}
@@ -325,8 +327,8 @@ footer .back-link:hover{color:var(--brand)}
       </h1>
 
       <p class="sub reveal">
-        Профессия, о которой мало кто знает. Высокий спрос, свободный график<br>
-        и доход, который зависит только от тебя — не от работодателя.
+        Профессия, о которой мало кто знает. Высокий спрос,<br class="desk-br">
+        свободный график и доход, который зависит только от тебя — не от работодателя.
       </p>
 
       <div class="countdown reveal" id="countdown">

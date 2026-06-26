@@ -237,6 +237,23 @@ footer .back-link:hover{color:var(--brand)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
+/* GIVEAWAY TEASE (hero) */
+.giveaway-tease{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(100deg,rgba(231,199,159,.14),rgba(224,22,127,.08));border:1px solid rgba(231,199,159,.4);border-radius:50px;padding:9px 22px;font-size:.8rem;color:var(--gold);font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+.giveaway-tease:hover{background:linear-gradient(100deg,rgba(231,199,159,.22),rgba(224,22,127,.16));transform:translateY(-2px)}
+.giveaway-tease .tdot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 1.4s ease-in-out infinite;flex-shrink:0}
+
+/* GIVEAWAY SECTION */
+.giveaway-sec{background:linear-gradient(160deg,rgba(231,199,159,.05),rgba(224,22,127,.04)),var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;text-align:center}
+.giveaway-card{background:linear-gradient(160deg,rgba(231,199,159,.07),rgba(224,22,127,.05));border:1px solid rgba(231,199,159,.22);border-radius:28px;padding:52px 44px 44px;margin:36px auto;max-width:680px;position:relative;overflow:hidden}
+.giveaway-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(231,199,159,.1),transparent);pointer-events:none}
+.giveaway-trophy{font-size:5rem;line-height:1;margin-bottom:16px;filter:drop-shadow(0 6px 20px rgba(231,199,159,.45))}
+.giveaway-prize{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.8rem,7vw,5rem);text-transform:uppercase;line-height:1;background:linear-gradient(110deg,var(--gold-2),#fff6e0,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 12px;letter-spacing:2px}
+.giveaway-what{font-size:1.08rem;color:var(--ink);margin-bottom:30px;font-weight:500}
+.giveaway-what em{color:var(--brand-2);font-style:normal}
+.giveaway-rule{display:inline-flex;align-items:flex-start;gap:12px;background:rgba(224,22,127,.09);border:1px solid rgba(224,22,127,.28);border-radius:14px;padding:16px 22px;font-size:.92rem;color:var(--ink);line-height:1.6;text-align:left;max-width:520px}
+.giveaway-rule .ri{font-size:1.5rem;flex-shrink:0;margin-top:1px}
+.giveaway-sparks{display:flex;justify-content:center;gap:10px;font-size:1.6rem;margin:30px 0 8px;opacity:.7}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .trust .row{grid-template-columns:repeat(2,1fr)}
@@ -314,6 +331,9 @@ footer .back-link:hover{color:var(--brand)}
           ✈️&nbsp; Занять место на вебинар
         </a>
         <p style="font-size:.8rem;color:var(--muted-2);margin-top:12px">Кнопка откроет Telegram-бот — регистрация займёт 30 секунд</p>
+        <a href="#giveaway" class="giveaway-tease" style="margin-top:16px">
+          <span class="tdot"></span>🎁 Розыгрыш бесплатного обучения в прямом эфире
+        </a>
       </div>
 
       <div class="timezones reveal">
@@ -625,6 +645,37 @@ footer .back-link:hover{color:var(--brand)}
         </a>
         <p style="font-size:.78rem;color:var(--muted-2);margin-top:10px">Ссылка на YouTube-трансляцию придёт автоматически в бот</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIVEAWAY ===== -->
+<section class="sec giveaway-sec" id="giveaway">
+  <div class="glow" style="width:700px;height:700px;background:var(--gold);top:-250px;left:50%;transform:translateX(-50%);opacity:.04"></div>
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Специальный сюрприз</span>
+      <h2>Прямо на вебинаре —<br><span class="grad">розыгрыш обучения</span></h2>
+      <p>Это не обещание «на потом». Прямо в прямом эфире, при всех — мы разыграем настоящее место в обучение.</p>
+    </div>
+
+    <div class="giveaway-card reveal">
+      <div class="giveaway-trophy">🏆</div>
+      <div class="giveaway-prize">1 Бесплатное место</div>
+      <p class="giveaway-what">в полноценное обучение <em>Beauty Mafia Academy</em></p>
+      <div class="giveaway-rule">
+        <span class="ri">⚡</span>
+        <span>Участвует только тот, кто будет <strong>в прямом эфире</strong> в момент розыгрыша. Зарегистрируйся сейчас — и не пропусти свой шанс.</span>
+      </div>
+    </div>
+
+    <div class="giveaway-sparks reveal">✨ 🎁 🎉 🎊 ✨</div>
+
+    <div class="reveal" style="text-align:center">
+      <a href="https://t.me/hair_beauty_mafia_bot?start=w55400962" target="_blank" rel="noopener" class="btn btn-primary btn-xl">
+        🎁&nbsp; Участвовать в розыгрыше
+      </a>
+      <p style="font-size:.8rem;color:var(--muted-2);margin-top:12px">Регистрация через Telegram — займёт 30 секунд</p>
     </div>
   </div>
 </section>

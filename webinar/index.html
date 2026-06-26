@@ -254,6 +254,15 @@ footer .back-link:hover{color:var(--brand)}
 .giveaway-rule .ri{font-size:1.5rem;flex-shrink:0;margin-top:1px}
 .giveaway-sparks{display:flex;justify-content:center;gap:10px;font-size:1.6rem;margin:30px 0 8px;opacity:.7}
 
+/* FLOATING GIFT */
+.float-gift{position:fixed;right:28px;top:50%;margin-top:-60px;z-index:88;display:flex;flex-direction:column;align-items:center;text-decoration:none;animation:giftLevitate 4.5s ease-in-out infinite}
+.float-gift-bokeh{position:absolute;width:160px;height:160px;top:8px;left:50%;transform:translateX(-50%);background:radial-gradient(circle 55px at 50% 45%,rgba(224,22,127,.28),transparent 70%),radial-gradient(circle 22px at 22% 18%,rgba(231,199,159,.35),transparent),radial-gradient(circle 18px at 80% 72%,rgba(231,199,159,.25),transparent),radial-gradient(circle 14px at 72% 14%,rgba(255,79,166,.2),transparent),radial-gradient(circle 20px at 12% 78%,rgba(224,22,127,.18),transparent);filter:blur(10px);pointer-events:none;z-index:0}
+.float-gift-bokeh::after{content:"";position:absolute;width:90px;height:90px;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid rgba(224,22,127,.25);animation:giftRing 2.8s ease-out infinite}
+.float-gift-ico{width:72px;height:72px;position:relative;z-index:2;filter:drop-shadow(0 0 18px rgba(224,22,127,.75)) drop-shadow(0 8px 24px rgba(0,0,0,.55))}
+.float-gift-label{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.62rem;letter-spacing:1.8px;color:var(--gold);text-align:center;line-height:1.45;margin-top:10px;position:relative;z-index:2;text-shadow:0 0 10px rgba(231,199,159,.55);background:rgba(11,9,12,.45);padding:5px 9px;border-radius:8px;backdrop-filter:blur(6px);border:1px solid rgba(231,199,159,.18)}
+@keyframes giftLevitate{0%,100%{transform:translateY(0) rotate(-1deg)}40%{transform:translateY(-12px) rotate(1.5deg)}70%{transform:translateY(5px) rotate(-0.5deg)}}
+@keyframes giftRing{0%{transform:translate(-50%,-50%) scale(.7);opacity:.9}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .trust .row{grid-template-columns:repeat(2,1fr)}
@@ -280,6 +289,7 @@ footer .back-link:hover{color:var(--brand)}
   .cd-num{font-size:2rem}
   .btn-xl{padding:18px 34px;font-size:.92rem}
   .float-cta{right:12px;bottom:12px;font-size:.72rem;padding:12px 16px}
+  .float-gift{display:none}
 }
 </style>
 </head>
@@ -794,5 +804,13 @@ new IntersectionObserver(function(entries){
 })()
 : document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
 </script>
+
+<!-- FLOATING GIFT -->
+<a href="#giveaway" class="float-gift" title="Розыгрыш бесплатного обучения">
+  <div class="float-gift-bokeh"></div>
+  <img class="float-gift-ico" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f381.svg" alt="🎁" />
+  <div class="float-gift-label">Розыгрыш<br>обучения</div>
+</a>
+
 </body>
 </html>

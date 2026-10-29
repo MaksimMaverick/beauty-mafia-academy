@@ -12,6 +12,18 @@
 <meta property="og:title" content="Beauty Mafia Hair Academy — обучение лечению и модификации волос" />
 <meta property="og:description" content="Кератин, ботокс, реконструкция. От первого клиента до личного бренда и стабильного дохода — под ключ." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://beautymafia.academy/" />
+<script>
+/* язык интерфейса: ?lang=uk|ru → выбор посетителя → язык браузера. RU — исходный, UA — словарь i18n/uk.js */
+(function(){var d=document.documentElement,l='ru';try{var q=new URLSearchParams(location.search).get('lang');if(q==='uk'||q==='ua')l='uk';else if(q==='ru')l='ru';else l=localStorage.getItem('bm_lang')||((navigator.language||'').toLowerCase().indexOf('uk')===0?'uk':'ru');if(q)localStorage.setItem('bm_lang',l);}catch(e){}d.setAttribute('data-lang',l);if(l==='uk'){d.lang='uk';d.classList.add('i18n-wait');setTimeout(function(){d.classList.remove('i18n-wait')},1500);}})();
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1012135685120190');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1012135685120190&amp;ev=PageView&amp;noscript=1" /></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet" />
@@ -337,6 +349,181 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   .tl-node{width:50px;height:50px}
   .tl-node b{font-size:1.2rem}
 }
+
+/* ===== цены 2026, салон, прогрев, калькулятор, квиз, подарок, язык ===== */
+html.i18n-wait body{opacity:0}
+.foot-col a{overflow-wrap:anywhere}
+.lang{display:inline-flex;border:1px solid var(--line-2);border-radius:50px;overflow:hidden;font-family:'Oswald',sans-serif;font-size:.74rem;letter-spacing:1px}
+.lang button{background:none;border:0;color:var(--muted);padding:8px 12px;cursor:pointer;font:inherit}
+.lang button.on{background:rgba(224,22,127,.25);color:#fff}
+.hero-note{margin-top:14px;font-size:.84rem;color:var(--muted-2)}
+.btn-xl{font-size:1rem;padding:20px 44px;letter-spacing:2px}
+.fine{font-size:.74rem;color:var(--muted-2);text-align:center;max-width:860px;margin:22px auto 0;line-height:1.55}
+
+.deadline{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;margin-top:20px;padding:11px 20px;border-radius:50px;background:rgba(224,22,127,.12);border:1px solid rgba(224,22,127,.4);font-size:.88rem}
+.deadline b{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.5px;color:var(--brand-2)}
+.plan .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+.plan .price s{font-size:1.4rem;font-weight:500;color:var(--muted-2);text-decoration-thickness:2px;text-decoration-color:var(--brand-2)}
+.plan .promo{font-size:.78rem;color:var(--gold);margin:6px 0 2px}
+html.promo-over .plan .price s,html.promo-over .promo,html.promo-over .deadline{display:none}
+
+.salon{margin-top:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:34px;align-items:center;background:linear-gradient(120deg,#231a1b,var(--bg-2) 62%);border:1px solid rgba(231,199,159,.38);border-radius:22px;padding:36px;position:relative;overflow:hidden}
+.salon::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 0 0,rgba(231,199,159,.13),transparent 55%);pointer-events:none}
+.salon>*{position:relative}
+.salon .pname{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold)}
+.salon h3{font-size:clamp(1.4rem,2.6vw,2rem);text-transform:uppercase;margin:8px 0 10px}
+.salon p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.salon .sprice{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.1rem;line-height:1}
+.salon .sprice-note{font-size:.8rem;color:var(--muted-2);margin:6px 0 20px}
+.salon ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.salon li{position:relative;padding-left:28px;font-size:.9rem;color:var(--muted)}
+.salon li::before{content:"✓";position:absolute;left:0;top:0;color:var(--gold);font-weight:700}
+
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pain-card{background:linear-gradient(180deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:.35s;position:relative;overflow:hidden}
+.pain-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+.pain-card:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:var(--shadow)}
+.pain-card .em{font-size:1.9rem;margin-bottom:14px;display:block}
+.pain-card h4{font-size:1.02rem;text-transform:uppercase;margin-bottom:8px;letter-spacing:.4px}
+.pain-card p{color:var(--muted);font-size:.9rem}
+.pain-close{text-align:center;margin-top:44px;padding:40px;background:linear-gradient(135deg,rgba(224,22,127,.12),rgba(231,199,159,.06));border:1px solid rgba(224,22,127,.25);border-radius:22px}
+.pain-close h3{font-size:clamp(1.5rem,3vw,2.4rem);text-transform:uppercase;margin-bottom:12px}
+.pain-close p{color:var(--muted);font-size:.98rem;max-width:560px;margin:0 auto}
+.pain-close .btn{margin-top:24px}
+.mystery{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.mystery .gm{width:600px;height:600px;background:var(--brand);top:-200px;left:50%;transform:translateX(-50%);opacity:.08}
+.mystery-inner{position:relative;z-index:2}
+.mystery-lead{text-align:center;max-width:820px;margin:0 auto 52px}
+.mystery-lead h2{font-size:clamp(2rem,4.2vw,3.4rem);text-transform:uppercase;margin:14px 0 20px}
+.mystery-lead p{font-size:1.02rem;color:var(--muted);line-height:1.75}
+.mystery-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:860px;margin:0 auto}
+.mcard{background:linear-gradient(145deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:flex;gap:18px;align-items:flex-start;transition:.35s}
+.mcard:hover{border-color:var(--line-2);transform:translateY(-4px);box-shadow:var(--shadow)}
+.mcard .icw{width:54px;height:54px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,rgba(224,22,127,.28),rgba(231,199,159,.12));border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:1.55rem}
+.mcard h4{font-size:1.05rem;text-transform:uppercase;margin-bottom:8px;letter-spacing:.4px}
+.mcard p{color:var(--muted);font-size:.88rem;line-height:1.6}
+.mystery-cta{text-align:center;margin-top:34px}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.aud-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.aud-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.aud-photo{width:100%;height:230px;object-fit:cover;display:block;transition:transform .5s ease}
+.aud-card:hover .aud-photo{transform:scale(1.06)}
+.aud-body{padding:18px 20px;display:flex;gap:12px;align-items:flex-start;flex:1}
+.aud-body .chk{width:30px;height:30px;min-width:30px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:700;margin-top:2px}
+.aud-body p{font-size:.91rem;line-height:1.55}
+
+.calc-box{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;max-width:980px;margin:0 auto;background:linear-gradient(150deg,var(--panel),var(--bg-2));border:1px solid var(--line-2);border-radius:22px;padding:34px}
+.rng{display:block;margin-bottom:22px}
+.rng span{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9rem;color:var(--muted);margin-bottom:10px}
+.rng b{font-family:'Oswald',sans-serif;color:var(--ink);font-size:1.15rem}
+.rng input{width:100%;accent-color:var(--brand);height:28px}
+.calc-plans{display:flex;flex-wrap:wrap;gap:8px}
+.cp{flex:1;min-width:118px;background:rgba(255,255,255,.04);border:1px solid var(--line-2);color:var(--ink);border-radius:12px;padding:12px 10px;font:500 .84rem 'Montserrat',sans-serif;cursor:pointer;transition:.2s}
+.cp.on{border-color:var(--brand);background:rgba(224,22,127,.18)}
+.calc-out{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.co{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.co span{display:block;font-size:.74rem;color:var(--muted-2);text-transform:uppercase;letter-spacing:1.2px}
+.co b{font-family:'Oswald',sans-serif;font-size:2rem;line-height:1.2}
+.co small{display:block;color:var(--muted);font-size:.84rem}
+
+.ref-sec{padding:10px 0 30px}
+.ref{display:flex;align-items:center;gap:24px;background:linear-gradient(120deg,rgba(224,22,127,.16),rgba(231,199,159,.08));border:1px solid rgba(224,22,127,.32);border-radius:22px;padding:28px 32px}
+.ref-ico{font-size:2.6rem}
+.ref-txt{flex:1}
+.ref h3{font-size:clamp(1.3rem,2.4vw,1.8rem);text-transform:uppercase;margin-bottom:6px}
+.ref p{color:var(--muted);font-size:.92rem}
+.ref small{display:block;color:var(--muted-2);font-size:.75rem;margin-top:6px}
+
+.qz-start{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
+.qz-start ul{list-style:none;text-align:left;display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.qz-start .btn{width:100%}
+.qz-start .form-note{margin-top:12px}
+
+.qz{position:fixed;inset:0;z-index:300;background:rgba(5,4,6,.88);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px}
+.qz[hidden]{display:none}
+html.qz-lock,html.qz-lock body{overflow:hidden}
+html.qz-lock .gift,html.qz-lock .gift-pop,html.qz-lock .float-cta{display:none}
+.qz-box{position:relative;width:min(560px,100%);max-height:100%;display:flex;flex-direction:column;background:linear-gradient(170deg,var(--panel-2),var(--bg-2));border:1px solid var(--line-2);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.qz-top{flex:none;padding:18px 24px 14px;border-bottom:1px solid var(--line)}
+.qz-meta{display:flex;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--muted);padding-right:40px}
+.qz-meta .g{color:var(--gold)}
+.qz-bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);margin-top:10px;overflow:hidden}
+.qz-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--gold));transition:width .35s}
+.qz-x{position:absolute;top:10px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
+.qz-body{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:22px 24px 26px;animation:qzIn .25s ease}
+.qz-h{font-family:'Oswald',sans-serif;font-size:1.45rem;text-transform:uppercase;line-height:1.15;margin-bottom:6px}
+.qz-sub{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+.qz-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.qz-opt{display:flex;align-items:center;width:100%;min-height:54px;text-align:left;background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:14px;padding:14px 16px;color:var(--ink);font:500 .95rem 'Montserrat',sans-serif;cursor:pointer;transition:.2s}
+.qz-opt:hover,.qz-opt:focus-visible{border-color:var(--brand);background:rgba(224,22,127,.12);outline:none}
+.qz-opt.on{border-color:var(--brand);background:rgba(224,22,127,.22)}
+.qz-back{background:none;border:0;color:var(--muted);font:500 .86rem 'Montserrat',sans-serif;cursor:pointer;padding:14px 0 0}
+.qz .field{margin-bottom:14px}
+.qz .field input,.qz .field select{font-size:16px}
+.qz-pref{display:flex;flex-wrap:wrap;gap:8px}
+.qz-pref label{flex:1;min-width:92px;position:relative}
+.qz-pref input{position:absolute;opacity:0;pointer-events:none}
+.qz-pref span{display:block;text-align:center;border:1px solid var(--line-2);border-radius:12px;padding:11px 6px;font-size:.86rem;cursor:pointer}
+.qz-pref input:checked+span{border-color:var(--brand);background:rgba(224,22,127,.2)}
+.qz-pref input:focus-visible+span{outline:2px solid var(--brand-2)}
+.qz-err{color:#ff86b4;font-size:.84rem;min-height:1.3em;margin:-2px 0 8px}
+.qz-legal{font-size:.7rem;color:var(--muted-2);margin-top:12px;line-height:1.5}
+.qz-legal a{text-decoration:underline}
+.qz .btn{width:100%}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.qz-res{text-align:center}
+.qz-res .big{font-size:2.8rem;line-height:1.2}
+.qz-card{background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:16px;padding:18px;margin:14px 0}
+.qz-card .pn{font-family:'Oswald',sans-serif;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.qz-card .pp{font-family:'Oswald',sans-serif;font-size:1.9rem;font-weight:700}
+.qz-card .pp s{font-size:1.05rem;font-weight:500;color:var(--muted-2);margin-left:10px}
+.qz-card p{color:var(--muted);font-size:.88rem;margin-top:6px}
+.qz-gift-ok{background:rgba(231,199,159,.1);border:1px solid rgba(231,199,159,.35);border-radius:14px;padding:12px 14px;font-size:.88rem;margin-bottom:16px}
+.qz-acts{display:flex;flex-direction:column;gap:10px}
+@keyframes qzIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.gift{position:fixed;left:18px;bottom:24px;z-index:89;width:64px;height:64px;border:0;background:none;padding:0;cursor:pointer;animation:giftFloat 4.5s ease-in-out infinite}
+.gift svg{width:100%;height:100%;filter:drop-shadow(0 0 16px rgba(224,22,127,.7)) drop-shadow(0 8px 18px rgba(0,0,0,.5));animation:giftWiggle 5s ease-in-out infinite;transform-origin:50% 80%}
+.gift::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(224,22,127,.4);animation:giftRing 2.8s ease-out infinite}
+.gift .gl{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);font-family:'Oswald',sans-serif;font-size:.58rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);background:rgba(11,9,12,.75);border:1px solid rgba(231,199,159,.25);border-radius:8px;padding:2px 7px;white-space:nowrap}
+.gift.done::after{content:"✓";position:absolute;top:-4px;right:-4px;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#241a12;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+@keyframes giftFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes giftWiggle{0%,84%,100%{transform:rotate(0)}88%{transform:rotate(-12deg)}92%{transform:rotate(10deg)}96%{transform:rotate(-5deg)}}
+@keyframes giftRing{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+.gift-pop{position:fixed;left:18px;bottom:110px;z-index:95;width:min(340px,calc(100vw - 36px));background:linear-gradient(160deg,#2a1622,var(--bg-2));border:1px solid rgba(231,199,159,.42);border-radius:20px;padding:22px 20px 18px;box-shadow:var(--shadow);animation:popIn .4s cubic-bezier(.2,1.4,.4,1)}
+.gift-pop[hidden]{display:none}
+.gift-pop h4{font-size:1.15rem;text-transform:uppercase;margin:8px 0;line-height:1.2}
+.gift-pop p{color:var(--muted);font-size:.88rem;margin-bottom:14px}
+.gift-pop small{display:block;color:var(--muted-2);font-size:.72rem;margin-top:10px}
+.gift-pop .btn{width:100%}
+.gift-pop .x{position:absolute;top:6px;right:10px;background:none;border:0;color:var(--muted);font-size:1.5rem;cursor:pointer;padding:4px 8px}
+@keyframes popIn{from{opacity:0;transform:translateY(16px) scale(.92)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.gift,.gift svg,.gift::before,.gift-pop,.qz-body{animation:none}}
+
+@media(max-width:960px){
+  .mystery-cards{grid-template-columns:1fr}
+  .audience-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .salon{grid-template-columns:1fr;padding:28px 22px;gap:22px}
+  .calc-box{grid-template-columns:1fr;padding:26px 20px}
+  .ref{flex-direction:column;text-align:center;padding:26px 22px}
+  .pain-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .pain-grid,.audience-grid,.salon ul{grid-template-columns:1fr}
+  .pain-close{padding:28px 18px}
+  .aud-photo{height:200px}
+  .btn-xl{padding:18px 26px;font-size:.92rem}
+  .plan .price s{font-size:1.2rem}
+  .deadline{border-radius:16px}
+  .qz{padding:0}
+  .qz-box{width:100%;height:100%;max-height:none;border-radius:0;border:0}
+  .qz-body{padding:20px 18px calc(26px + env(safe-area-inset-bottom))}
+  .qz-top{padding:14px 18px 12px}
+  .gift{width:56px;height:56px;left:14px;bottom:22px}
+  .gift-pop{left:14px;bottom:96px}
+}
 </style>
 </head>
 <body>
@@ -353,13 +540,12 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
         <li><a href="#author">Автор</a></li>
         <li><a href="#reviews">Отзывы</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="webinar/" style="color:var(--brand-2)">🎓 Вебинар</a></li>
-        <li><a class="btn btn-primary m-cta" href="#cta">Записаться</a></li>
+        <li><a class="btn btn-primary m-cta" href="#cta" data-quiz>Записаться</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="webinar/" class="btn btn-ghost" style="font-size:.76rem;padding:11px 18px;border-color:var(--brand);color:var(--brand-2)">🎓 Вебинар</a>
-      <a class="btn btn-primary" href="#cta">Записаться</a>
+      <div class="lang" role="group" aria-label="Язык сайта"><button type="button" data-setlang="ru">RU</button><button type="button" data-setlang="uk">UA</button></div>
+      <a class="btn btn-primary" href="#cta" data-quiz>Записаться</a>
       <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -373,16 +559,17 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   <div class="glow b"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
-      <span class="eyebrow">Обучение лечению и модификации волос · Chicago</span>
+      <span class="eyebrow">Обучение лечению и модификации волос · Чикаго · все штаты США</span>
       <h1>
         <span class="script">Beauty Mafia Hair Academy</span>
         Профессия мастера по <span class="grad">лечению и модификации</span> волос
       </h1>
       <p class="lead">Кератин, ботокс, реконструкция — на живых моделях, до результата. От диагностики и первого клиента до личного бренда и стабильного дохода. Под ключ.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#pricing">Выбрать формат</a>
+        <a class="btn btn-primary" href="#cta" data-quiz>Подобрать обучение</a>
         <a class="btn btn-ghost" href="#results">Смотреть работы</a>
       </div>
+      <p class="hero-note">⏱ 1 минута · 6 вопросов · 🎁 подарок за прохождение</p>
       <div class="hero-stats">
         <div class="hstat"><div class="num" data-count="50" data-suffix="+">0</div><div class="lbl">выпускников</div></div>
         <div class="hstat"><div class="num" data-count="7" data-suffix=" лет">0</div><div class="lbl">в индустрии</div></div>
@@ -391,7 +578,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     </div>
     <div class="portrait reveal">
       <div class="ring"></div>
-      <div class="frame"><img src="images/author.jpg" alt="Maksim Maverick — основатель Beauty Mafia Hair Academy" /></div>
+      <div class="frame"><img src="images/author.webp" alt="Maksim Maverick — основатель Beauty Mafia Hair Academy" fetchpriority="high" /></div>
       <div class="float-badge fb-1">
         <span class="ico">🏆</span>
         <div><div class="t">Best seller</div><div class="s">Наставничество · 4 недели</div></div>
@@ -411,7 +598,69 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       <div class="item"><span class="ico">💇‍♀️</span><div><b>Практика на моделях</b><span>от 3 моделей на курсе</span></div></div>
       <div class="item"><span class="ico">📋</span><div><b>Методичка и чек-листы</b><span>составы, диагностика, уход</span></div></div>
       <div class="item"><span class="ico">🕑</span><div><b>Поддержка 24/7</b><span>закрытая группа учеников</span></div></div>
-      <div class="item"><span class="ico">💳</span><div><b>Рассрочка</b><span>на индивид. и наставничестве</span></div></div>
+      <div class="item"><span class="ico">💳</span><div><b>Рассрочка</b><span>Affirm / Klarna · до 12 мес</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРОГРЕВ: БОЛИ ================= -->
+<section class="sec" id="pain">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Узнаёшь себя?</span>
+      <h2>Если ты сейчас <span class="grad">чувствуешь</span> так…</h2>
+      <p>Ты не одна. Именно для этого мы и создали Beauty Mafia Hair Academy.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><span class="em">😔</span><h4>Работаешь много — денег мало</h4><p>Трудишься с утра до ночи, но заработок не растёт. Кажется, что потолок уже достигнут.</p></div>
+      <div class="pain-card reveal"><span class="em">⏰</span><h4>Время не принадлежит тебе</h4><p>Жёсткий график, чужие правила. Не можешь выбрать — когда работать, а когда отдыхать.</p></div>
+      <div class="pain-card reveal"><span class="em">✈️</span><h4>Мечтаешь путешествовать</h4><p>Смотришь на чужие фото из других стран и думаешь — когда же это будет у меня?</p></div>
+      <div class="pain-card reveal"><span class="em">👨‍👩‍👧</span><h4>Не хватает времени на близких</h4><p>Семья, дети, родители — они ждут тебя, а ты снова на работе. Хочется это изменить.</p></div>
+      <div class="pain-card reveal"><span class="em">🌎</span><h4>Хочешь реализоваться в США</h4><p>Думаешь о смене профессии или ещё не нашла себя на американском рынке.</p></div>
+      <div class="pain-card reveal"><span class="em">🚀</span><h4>Чувствуешь, что способна на большее</h4><p>Есть ощущение, что ты недооцениваешь себя — но не знаешь, с чего начать новую главу.</p></div>
+    </div>
+    <div class="pain-close reveal">
+      <h3>Тогда это обучение <span class="grad">создано для тебя</span></h3>
+      <p>На бесплатной консультации покажу конкретный путь, как изменить ситуацию — лично тебе. Без воды.</p>
+      <a class="btn btn-primary" href="#cta" data-quiz>Подобрать свой путь →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРОГРЕВ: ПРОФЕССИЯ ================= -->
+<section class="sec mystery" id="profession">
+  <div class="glow gm"></div>
+  <div class="wrap mystery-inner">
+    <div class="mystery-lead reveal">
+      <span class="eyebrow">Секретная профессия</span>
+      <h2>Профессия, о которой <span class="grad">мало кто знает</span></h2>
+      <p>Это ниша, которая стремительно растёт в США прямо сейчас. Не очередной «быстрый заработок», а реальная специальность с огромным спросом, которую можно освоить даже с нуля. Она позволяет зарабатывать от $80 в час* и строить расписание вокруг своей жизни, а не наоборот.</p>
+    </div>
+    <div class="mystery-cards">
+      <div class="mcard reveal"><div class="icw">💎</div><div><h4>Высокий чек — без торга</h4><p>Клиенты в США платят $250–500* за одну процедуру и не торгуются. На консультации объясню, почему эта ниша ценится дорого и как выйти на такой чек с первых клиентов.</p></div></div>
+      <div class="mcard reveal"><div class="icw">📈</div><div><h4>Спрос растёт каждый год</h4><p>Индустрия красоты в США — рынок на $100 млрд. Специалистов не хватает. Ты узнаешь, в какой нише сейчас самый большой дефицит кадров — и как этим воспользоваться.</p></div></div>
+      <div class="mcard reveal"><div class="icw">🗓️</div><div><h4>Свободный график — это реально</h4><p>Сама выбираешь клиентов, дни и часы. Покажу, как построить расписание мечты — и примеры мастеров, которые уже так живут.</p></div></div>
+      <div class="mcard reveal"><div class="icw">🌍</div><div><h4>Работает в любой точке США</h4><p>Переезд, другой штат или город — эти навыки работают везде. Профессия не привязана к одному месту: ты сама выбираешь, где работать.</p></div></div>
+    </div>
+    <p class="fine reveal">* Средние цены процедур в салонах США. Доход мастера зависит от штата, опыта, графика и числа клиентов и не гарантируется. Для работы с клиентами в большинстве штатов нужна лицензия.</p>
+    <div class="mystery-cta reveal"><a href="#cta" data-quiz class="btn btn-primary btn-xl">Хочу узнать подробности →</a></div>
+  </div>
+</section>
+
+<!-- ================= ПРОГРЕВ: МЕЧТЫ ================= -->
+<section class="sec" id="dreams">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Для кого обучение</span>
+      <h2>Это обучение <span class="grad">для тебя</span>, если хочешь:</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-1.webp" alt="Мастер по волосам за работой" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p>Получить <strong>перспективную и востребованную профессию</strong> в 2026–2027 году в США</p></div></div>
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-2.webp" alt="Свой доход" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p>Начать <strong>зарабатывать от $80–100 в час*</strong> и влиять на свой доход напрямую</p></div></div>
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-3.webp" alt="Свободный удобный график" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p><strong>Формировать свой комфортный график</strong> и работать тогда, когда тебе удобно</p></div></div>
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-4.webp" alt="Путешествия" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p><strong>Путешествовать часто</strong> и не зависеть от расписания чужой компании</p></div></div>
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-5.webp" alt="Время для семьи" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p><strong>Уделять больше времени семье и близким</strong>, не жертвуя при этом доходом</p></div></div>
+      <div class="aud-card reveal"><img class="aud-photo" src="images/dream-6.webp" alt="Свой салон красоты" loading="lazy" /><div class="aud-body"><div class="chk">✓</div><p>Найти своё место на <strong>американском рынке красоты</strong> и построить личный бренд</p></div></div>
     </div>
   </div>
 </section>
@@ -449,7 +698,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       <div class="card module reveal"><span class="step">03</span><h3>Модификация</h3><ul>
         <li>Выпрямление и стайлинг</li><li>Горячие техники</li><li>Сложные и спорные случаи</li></ul></div>
       <div class="card module reveal"><span class="step">04</span><h3>Материалы и инструменты</h3><ul>
-        <li>Стартовый портфель составов</li><li>Подбор инструментов</li><li>Методичка и чек-листы</li><li>Видео и записи вебинаров</li></ul></div>
+        <li>Стартовый портфель составов</li><li>Подбор инструментов</li><li>Методичка и чек-листы</li><li>Видео и записи уроков</li></ul></div>
       <div class="card module reveal"><span class="step">05</span><h3>Личный бренд и соцсети</h3><ul>
         <li>Упаковка профиля</li><li>Контент, съёмка и монтаж</li><li>Продвижение и таргет</li><li>Работа с AI</li></ul></div>
       <div class="card module reveal"><span class="step">06</span><h3>Клиенты и деньги</h3><ul>
@@ -542,33 +791,36 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     <div class="shead reveal">
       <span class="eyebrow">Форматы обучения</span>
       <h2>Выбери свой путь</h2>
-      <p>Три формата — от твёрдой базы до бизнеса под ключ. На всех — практика, материалы и сертификат.</p>
+      <p>Три формата — от твёрдой базы до бизнеса под ключ. На всех — практика, материалы и сертификат. А если хочешь свой салон — откроем его вместе.</p>
+      <div class="deadline" id="deadline"><span>🔥 Цены 2026 года — до 31 декабря. Успей забронировать!</span><b id="dl-left"></b></div>
     </div>
     <div class="plans">
       <!-- group -->
       <div class="plan reveal">
         <div class="pname">Групповое</div>
         <div class="dur">10 дней обучения</div>
-        <div class="price">$1900</div>
-        <div class="install">Рассрочка ~$159/мес · 12 мес</div>
+        <div class="price">$1900 <s>$2500</s></div>
+        <div class="promo">до конца 2026 года · с 2027 — $2500</div>
+        <div class="install">Рассрочка от ~$159/мес · Affirm / Klarna*</div>
         <ul>
           <li>Теория и практика (3 модели)</li>
           <li>Кератин · Ботокс · Лечение</li>
-          <li>Методичка, чек-листы, видео, записи вебинаров</li>
+          <li>Методичка, чек-листы, видео, записи уроков</li>
           <li>Базовый личный бренд и маркетинг</li>
           <li>Помощь в трудоустройстве и поиске клиентов</li>
           <li>Сертификат</li>
           <li>Закрытая группа с поддержкой 24/7</li>
         </ul>
-        <a class="btn btn-ghost" href="#cta" data-plan="Групповое — $1900">Записаться</a>
+        <a class="btn btn-ghost" href="#cta" data-quiz data-plan="group">Записаться</a>
       </div>
       <!-- individual -->
       <div class="plan featured reveal">
         <div class="tag">★ Хит продаж</div>
         <div class="pname">Индивидуальное</div>
         <div class="dur">2 недели обучения</div>
-        <div class="price">$2900</div>
-        <div class="install">Рассрочка ~$242/мес · 12 мес</div>
+        <div class="price">$2900 <s>$3600</s></div>
+        <div class="promo">до конца 2026 года · с 2027 — $3600</div>
+        <div class="install">Рассрочка от ~$242/мес · Affirm / Klarna*</div>
         <ul>
           <li class="plus">Всё из группового</li>
           <li>Больше практики · индивидуальный график</li>
@@ -578,26 +830,80 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
           <li>Работа с AI и автоматизация бизнеса</li>
           <li>Глубокий маркетинг и продвижение</li>
         </ul>
-        <a class="btn btn-primary" href="#cta" data-plan="Индивидуальное — $2900">Записаться</a>
+        <a class="btn btn-primary" href="#cta" data-quiz data-plan="individual">Записаться</a>
       </div>
       <!-- mentorship -->
       <div class="plan reveal">
         <div class="pname">Наставничество</div>
         <div class="dur">4 недели обучения</div>
-        <div class="price">$5500</div>
-        <div class="install">Рассрочка ~$459/мес · 12 мес</div>
+        <div class="price">$5500 <s>$6900</s></div>
+        <div class="promo">до конца 2026 года · с 2027 — $6900</div>
+        <div class="install">Рассрочка от ~$459/мес · Affirm / Klarna*</div>
         <ul>
           <li class="plus">Всё из индивидуального</li>
           <li>Бизнес и личный бренд под ключ</li>
           <li>Стайлинг · сложные техники</li>
           <li>Таргетированная реклама под ключ</li>
-          <li>Лицензия под ключ</li>
+          <li>План и сопровождение до лицензии</li>
           <li>Трудоустройство или свой бизнес под ключ</li>
           <li>Продвижение в наших ресурсах</li>
         </ul>
-        <a class="btn btn-gold" href="#cta" data-plan="Наставничество — $5500">Записаться</a>
+        <a class="btn btn-gold" href="#cta" data-quiz data-plan="mentor">Записаться</a>
       </div>
     </div>
+    <!-- salon -->
+    <div class="salon reveal" id="salon">
+      <div>
+        <div class="pname">Салон под ключ</div>
+        <h3>Откроем ваш <span class="grad">многофункциональный салон</span></h3>
+        <p>От идеи и локации до команды и первых клиентов. Вы управляете бизнесом — процессы работают.</p>
+        <div class="sprice">Индивидуально</div>
+        <div class="sprice-note">Стоимость рассчитаем после разбора вашего проекта</div>
+        <a class="btn btn-gold" href="#cta" data-quiz data-plan="salon">Обсудить проект салона</a>
+      </div>
+      <ul>
+        <li>Бизнес-план и финмодель: бюджет, цены, окупаемость</li>
+        <li>Поиск локации и переговоры по аренде</li>
+        <li>Документы: регистрация бизнеса, EIN, страховка, разрешения</li>
+        <li>Пошаговый план лицензий салона и мастеров в вашем штате</li>
+        <li>Зонирование, ремонт, оборудование и поставщики</li>
+        <li>Меню услуг: волосы, ногти, брови, косметология</li>
+        <li>Найм и обучение персонала, стандарты сервиса</li>
+        <li>Процессы: онлайн-запись, CRM, учёт, автоматизация</li>
+        <li>Привлечение клиентов: Google, Instagram, реклама, отзывы</li>
+        <li>Сопровождение запуска и первых месяцев работы</li>
+      </ul>
+    </div>
+    <p class="fine">* Рассрочку до 12 месяцев оформляют партнёры Affirm или Klarna, решение — онлайн за пару минут. Пример: $1900 на 12 месяцев при 0% годовых — ~$159/мес. Ставка 0–36% годовых зависит от одобрения партнёра. Цены 2026 года действуют при бронировании до 31.12.2026.</p>
+  </div>
+</section>
+
+<!-- ================= КАЛЬКУЛЯТОР ================= -->
+<section class="sec calc" id="calc">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Калькулятор окупаемости</span>
+      <h2>Сколько клиентов <span class="grad">вернут обучение</span></h2>
+      <p>Подвигай ползунки и посчитай на примере своего графика.</p>
+    </div>
+    <div class="calc-box reveal">
+      <div>
+        <label class="rng"><span>Клиентов в неделю <b id="c-n-v">4</b></span><input type="range" id="c-n" min="1" max="15" value="4" /></label>
+        <label class="rng"><span>Средний чек за процедуру <b id="c-c-v">$300</b></span><input type="range" id="c-c" min="150" max="500" step="10" value="300" /></label>
+        <div class="rng"><span>Формат обучения</span></div>
+        <div class="calc-plans">
+          <button type="button" class="cp on" data-p="1900" aria-pressed="true">Групповое</button>
+          <button type="button" class="cp" data-p="2900" aria-pressed="false">Индивидуальное</button>
+          <button type="button" class="cp" data-p="5500" aria-pressed="false">Наставничество</button>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="co"><span>Выручка в месяц</span><b id="c-m">$5,200</b></div>
+        <div class="co"><span>Обучение окупится за</span><b id="c-pb">8 клиентов</b><small id="c-w">≈ 2 недели работы</small></div>
+        <a class="btn btn-primary" href="#cta" data-quiz>Подобрать обучение</a>
+      </div>
+    </div>
+    <p class="fine">Пример расчёта, не гарантия дохода: учтено ~20% на материалы. Реальные цены, спрос и число клиентов зависят от штата, опыта и вашей работы. Для работы с клиентами в большинстве штатов нужна лицензия.</p>
   </div>
 </section>
 
@@ -605,7 +911,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 <section class="sec" id="author">
   <div class="wrap author-grid">
     <div class="author-photo reveal">
-      <img src="images/maksim-work.jpg" alt="Maksim Maverick — мастер за работой" />
+      <img src="images/maksim-work.webp" alt="Maksim Maverick — мастер за работой" loading="lazy" />
       <div class="name-chip"><b>Maksim Maverick</b><span>Основатель академии · USA</span></div>
     </div>
     <div class="author-body reveal">
@@ -631,7 +937,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       <h2>Что говорят выпускники</h2>
       <p>Истории тех, кто пришёл за профессией и получил результат.</p>
     </div>
-    <div class="cards">
+    <div class="cards" data-noi18n>
       <div class="card review reveal">
         <div class="stars">★★★★★</div>
         <p>«Пришла абсолютной новичкой, а уже на курсе сделала первых клиентов. Максим объясняет так, что страшно перестаёт быть страшно. Кератин и ботокс теперь делаю уверенно.»</p>
@@ -668,6 +974,20 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 </section>
 
 <!-- ================= FAQ ================= -->
+<section class="ref-sec" id="referral">
+  <div class="wrap">
+    <div class="ref reveal">
+      <div class="ref-ico">💞</div>
+      <div class="ref-txt">
+        <h3>Приведи подругу — <span class="grad">получи $200</span></h3>
+        <p>Выпускникам академии — $200 за каждого друга, который запишется на обучение. А другу — скидка $100 на любой формат.</p>
+        <small>Выплата — после оплаты обучения другом. Подробности — на консультации.</small>
+      </div>
+      <a class="btn btn-gold" href="#cta" data-quiz>Записаться с подругой</a>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="faq">
   <div class="wrap">
     <div class="shead reveal">
@@ -676,9 +996,10 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     </div>
     <div class="faq-list reveal">
       <div class="q"><div class="q-head"><h4>Нужен ли опыт, чтобы пойти на обучение?</h4><span class="pm">+</span></div><div class="q-body"><p>Нет. Мы берём с полного нуля и доводим до уверенной самостоятельной работы с клиентом. Действующим мастерам обучение помогает расширить прайс и поднять чек.</p></div></div>
-      <div class="q"><div class="q-head"><h4>Как проходит обучение — онлайн или очно?</h4><span class="pm">+</span></div><div class="q-body"><p>Основная практика проходит очно в Чикаго на живых моделях, плюс вы получаете доступ к онлайн-материалам, методичке, чек-листам и записям. По отдельным программам (например, реконструкция) есть онлайн-формат. Точный график подбираем под вас.</p></div></div>
-      <div class="q"><div class="q-head"><h4>Выдаёте ли сертификат и лицензию?</h4><span class="pm">+</span></div><div class="q-body"><p>Сертификат выдаётся на всех форматах обучения. На наставничестве дополнительно помогаем с лицензией под ключ для легальной работы.</p></div></div>
-      <div class="q"><div class="q-head"><h4>Есть ли рассрочка?</h4><span class="pm">+</span></div><div class="q-body"><p>Да, рассрочка доступна на всех форматах — платёж от ~$159/мес (до 12 месяцев). Условия обсудим индивидуально — оставьте заявку.</p></div></div>
+      <div class="q"><div class="q-head"><h4>Как проходит обучение — онлайн или очно?</h4><span class="pm">+</span></div><div class="q-body"><p>Основная практика проходит очно в Чикаго на живых моделях, плюс вы получаете доступ к онлайн-материалам, методичке, чек-листам и записям. По отдельным программам (например, реконструкция) есть онлайн-формат. Точный график подбираем под вас. Если вы из другого штата — даты курса согласуем заранее, чтобы было удобно спланировать поездку.</p></div></div>
+      <div class="q"><div class="q-head"><h4>Нужна ли лицензия и помогаете ли её получить?</h4><span class="pm">+</span></div><div class="q-body"><p>Сертификат академии выдаётся на всех форматах — он подтверждает обучение. Лицензию косметолога выдаёт штат, а не школа: в большинстве штатов она нужна, чтобы работать с клиентами за деньги. Я честно консультирую и даю пошаговый план, как получить лицензию в вашем штате: требования, часы обучения, экзамены, документы. На наставничестве сопровождаю на всём пути.</p></div></div>
+      <div class="q"><div class="q-head"><h4>Есть ли рассрочка?</h4><span class="pm">+</span></div><div class="q-body"><p>Да, на всех форматах — через Affirm или Klarna: от ~$159/мес на 12 месяцев, решение онлайн за пару минут. Ставка зависит от одобрения партнёра (от 0% годовых). Можно оплатить и сразу полностью.</p></div></div>
+      <div class="q promo"><div class="q-head"><h4>Как успеть по ценам 2026 года?</h4><span class="pm">+</span></div><div class="q-body"><p>Забронируйте место до 31 декабря 2026 года — условия брони расскажем на консультации. С 2027 года цены вырастут: групповое — $2500, индивидуальное — $3600, наставничество — $6900.</p></div></div>
       <div class="q"><div class="q-head"><h4>Помогаете ли с клиентами и трудоустройством?</h4><span class="pm">+</span></div><div class="q-body"><p>Да. На всех форматах — помощь в поиске клиентов и трудоустройстве. На старших тарифах первых клиентов, соцсети, рекламу и бизнес настраиваем под ключ.</p></div></div>
       <div class="q"><div class="q-head"><h4>Что с материалами и инструментами?</h4><span class="pm">+</span></div><div class="q-body"><p>Вы получаете список стартового портфеля составов и инструментов, а на обучении работаете с профессиональными материалами. Поможем собрать набор под старт без лишних трат.</p></div></div>
     </div>
@@ -692,35 +1013,25 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     <div class="cta-box reveal">
       <div>
         <span class="eyebrow">Старт в профессии</span>
-        <h2>Оставь заявку на обучение</h2>
-        <p>Расскажем про форматы, график и рассрочку, поможем выбрать программу под твою цель. Без навязывания — просто разберём твою ситуацию.</p>
+        <h2>Подбери обучение за 1 минуту</h2>
+        <p>Ответь на 6 коротких вопросов — подберём формат под твою цель и опыт, расскажем про график и рассрочку. Без навязывания — просто разберём твою ситуацию.</p>
         <div class="cta-contacts">
-          <a class="chip" href="https://t.me/beautymafia" target="_blank" rel="noopener">✈️ Telegram</a>
-          <a class="chip" href="https://wa.me/10000000000" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="chip" href="https://instagram.com/beautymafia.academy" target="_blank" rel="noopener">📷 Instagram</a>
-          <a class="chip" href="mailto:mr.kodymusic@gmail.com">✉️ E-mail</a>
+          <a class="chip" href="https://calendly.com/mmaverick/30min" target="_blank" rel="noopener" data-contact="calendly">📅 Консультация онлайн</a>
+          <a class="chip" href="https://t.me/hair_beauty_mafia_bot" target="_blank" rel="noopener" data-contact="telegram">✈️ Telegram</a>
+          <a class="chip" href="https://instagram.com/beautymafia.academy" target="_blank" rel="noopener" data-contact="instagram">📷 Instagram</a>
+          <a class="chip" href="mailto:mr.kodymusic@gmail.com" data-contact="email">✉️ E-mail</a>
         </div>
       </div>
       <div>
-        <form id="lead-form">
-          <div class="field"><label for="name">Имя</label><input id="name" name="name" type="text" placeholder="Как вас зовут" required /></div>
-          <div class="field"><label for="contact">Телефон или мессенджер</label><input id="contact" name="contact" type="text" placeholder="+1 ... / @telegram" required /></div>
-          <div class="field"><label for="plan">Интересующий формат</label>
-            <select id="plan" name="plan">
-              <option>Ещё не определился(ась)</option>
-              <option>Групповое — $1900</option>
-              <option>Индивидуальное — $2900</option>
-              <option>Наставничество — $5500</option>
-            </select>
-          </div>
-          <div class="field"><label for="msg">Комментарий</label><textarea id="msg" name="msg" placeholder="Ваш опыт, вопросы, удобное время связи"></textarea></div>
-          <button type="submit" class="btn btn-primary">Отправить заявку</button>
-          <p class="form-note">Нажимая «Отправить», вы соглашаетесь на обработку данных. Мы свяжемся с вами в ближайшее время.</p>
-        </form>
-        <div class="form-ok" id="form-ok">
-          <div class="ico">✅</div>
-          <h3 style="margin:10px 0">Заявка готова к отправке!</h3>
-          <p style="color:var(--muted)">Откроется почтовый клиент с заполненным письмом. Если не открылся — напишите нам в Telegram или на e-mail выше.</p>
+        <div class="qz-start">
+          <ul>
+            <li>🎯 Формат под твою цель и опыт</li>
+            <li class="promo">🔥 Успей забронировать по цене 2026 года</li>
+            <li>🎁 Стартовый набор мастера в подарок</li>
+            <li>💳 Рассрочка Affirm / Klarna до 12 месяцев</li>
+          </ul>
+          <a class="btn btn-primary btn-xl" href="#cta" data-quiz>Начать подбор →</a>
+          <p class="form-note">6 вопросов · меньше минуты</p>
         </div>
       </div>
     </div>
@@ -733,7 +1044,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     <div class="foot-grid">
       <div>
         <img class="foot-logo" src="images/logo-white.png" alt="Beauty Mafia Hair Academy" />
-        <p>Академия лечения и модификации волос. Кератин, ботокс, реконструкция. Обучение профессии и бизнесу — Chicago.</p>
+        <p>Академия лечения и модификации волос. Кератин, ботокс, реконструкция. Обучение профессии и бизнесу — очно в Чикаго, для учеников из всех штатов США.</p>
       </div>
       <div class="foot-col">
         <h5>Навигация</h5>
@@ -745,20 +1056,47 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       </div>
       <div class="foot-col">
         <h5>Контакты</h5>
-        <a href="mailto:mr.kodymusic@gmail.com">mr.kodymusic@gmail.com</a>
-        <a href="https://t.me/beautymafia" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://instagram.com/beautymafia.academy" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://calendly.com/mmaverick/30min" target="_blank" rel="noopener" data-contact="calendly">Консультация онлайн</a>
+        <a href="https://t.me/hair_beauty_mafia_bot" target="_blank" rel="noopener" data-contact="telegram">Telegram</a>
+        <a href="https://instagram.com/beautymafia.academy" target="_blank" rel="noopener" data-contact="instagram">Instagram</a>
+        <a href="mailto:mr.kodymusic@gmail.com" data-contact="email">mr.kodymusic@gmail.com</a>
         <span>Chicago, USA</span>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> Beauty Mafia Hair Academy · Maksim Maverick</span>
-      <span>Все права защищены</span>
+      <span><a href="privacy/">Политика конфиденциальности</a> · Все права защищены</span>
     </div>
   </div>
 </footer>
 
-<a class="float-cta" href="#cta" aria-label="Оставить заявку">✍️</a>
+<a class="float-cta" href="#cta" data-quiz aria-label="Оставить заявку">✍️</a>
+
+<!-- ================= ПОДАРОК ================= -->
+<button class="gift" id="gift" type="button" aria-label="Подарок" aria-controls="gift-pop">
+  <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gift-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fa6"/><stop offset="1" stop-color="#b8005f"/></linearGradient></defs><rect x="9" y="27" width="46" height="30" rx="5" fill="url(#gift-g)"/><rect x="5" y="18" width="54" height="12" rx="4" fill="#e0167f"/><rect x="28" y="18" width="8" height="39" fill="#e7c79f"/><path d="M32 18c-3-8-14-11-14-4 0 4 7 5 14 4zm0 0c3-8 14-11 14-4 0 4-7 5-14 4z" fill="none" stroke="#e7c79f" stroke-width="3.5" stroke-linejoin="round"/></svg>
+  <span class="gl">Подарок</span>
+</button>
+<div class="gift-pop" id="gift-pop" role="dialog" aria-labelledby="gift-h" hidden>
+  <button class="x" id="gift-x" type="button" aria-label="Закрыть">×</button>
+  <span class="eyebrow">🎁 Сюрприз</span>
+  <h4 id="gift-h">Тебе подарок — стартовый набор для мастера!</h4>
+  <p>Чтобы закрепить подарок — оставь заявку ниже: ответь на 6 коротких вопросов.</p>
+  <button class="btn btn-primary" id="gift-go" type="button">Закрепить подарок</button>
+  <small>Подарок вручается при записи на любой формат обучения.</small>
+</div>
+
+<!-- ================= КВИЗ ================= -->
+<div class="qz" id="qz" role="dialog" aria-modal="true" aria-labelledby="qz-title" hidden>
+  <div class="qz-box">
+    <div class="qz-top">
+      <div class="qz-meta"><span id="qz-step">Шаг 1</span><span class="g">🎁 Подарок в конце</span></div>
+      <div class="qz-bar"><i id="qz-fill"></i></div>
+      <button class="qz-x" id="qz-x" type="button" aria-label="Закрыть">×</button>
+    </div>
+    <div class="qz-body" id="qz-body" aria-live="polite"></div>
+  </div>
+</div>
 
 <!-- ================= LIGHTBOX ================= -->
 <div class="lightbox" id="lightbox"><button class="x" id="lb-close" aria-label="Закрыть">×</button><img id="lb-img" src="" alt="" /></div>
@@ -776,12 +1114,46 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 (function(){
   "use strict";
 
-  // ===== НАСТРОЙКИ TELEGRAM =====
-  // Данные ОТДЕЛЬНОГО бота для заявок (создать: @BotFather -> /newbot).
-  // Пока поля пустые — заявки уходят на e-mail. Заполните оба — пойдут в Telegram.
-  var TG_BOT_TOKEN = "";  // НЕЛЬЗЯ хранить токен здесь — код сайта виден всем. Нужен серверный бэкенд.
-  var TG_CHAT_ID   = "";  // Пока пусто — заявки уходят на e-mail (fallback ниже).
-  var LEAD_EMAIL   = "mr.kodymusic@gmail.com";
+  // ===== НАСТРОЙКИ =====
+  // Токены сюда НЕ вписывать: код сайта виден всем. Заявки принимает Google Apps Script
+  // (таблица + Telegram), его токены лежат в свойствах скрипта — см. apps-script/README.md.
+  var CFG = {
+    leadsUrl: "",  // адрес веб-приложения Apps Script (…/exec). Пусто = заявка не уходит, человеку показываем Calendly и Telegram
+    calendly: "https://calendly.com/mmaverick/30min",
+    bot: "https://t.me/hair_beauty_mafia_bot",
+    deadline: "2027-01-01T00:00:00-06:00",  // конец цен 2026 года (полночь по Чикаго); после — зачёркнутые цены и таймер исчезают сами
+    i18n: "1"  // версия словаря i18n/uk.js — поднять после правки перевода
+  };
+
+  // ===== ЯЗЫК: RU — исходный текст страницы, UA — словарь i18n/uk.js (белый список строк) =====
+  var LANG = document.documentElement.getAttribute('data-lang') === 'uk' ? 'uk' : 'ru';
+  var DICT = {};
+  function t(s){ return DICT[s] || s; }
+  function applyDict(root){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, nodes = [];
+    while((n = w.nextNode())){
+      var p = n.parentNode;
+      if(!p || /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA)$/.test(p.nodeName) || (p.closest && p.closest('[data-noi18n]'))) continue;
+      if(/[А-Яа-яЁё]/.test(n.nodeValue)) nodes.push(n);
+    }
+    nodes.forEach(function(n){
+      var raw = n.nodeValue, v = DICT[raw.replace(/\s+/g, ' ').trim()];
+      if(v) n.nodeValue = raw.match(/^\s*/)[0] + v + raw.match(/\s*$/)[0];
+    });
+    root.querySelectorAll('[placeholder],[aria-label],[alt],[title]').forEach(function(el){
+      ['placeholder', 'aria-label', 'alt', 'title'].forEach(function(a){
+        var v = el.getAttribute(a); if(v && DICT[v.trim()]) el.setAttribute(a, DICT[v.trim()]);
+      });
+    });
+  }
+  var ready = new Promise(function(resolve){
+    if(LANG !== 'uk') return resolve();
+    var s = document.createElement('script');
+    s.src = 'i18n/uk.js?v=' + CFG.i18n;
+    s.onload = function(){ DICT = window.BM_UK || {}; applyDict(document.body); document.title = t(document.title); resolve(); };
+    s.onerror = function(){ resolve(); };
+    document.head.appendChild(s);
+  }).then(function(){ document.documentElement.classList.remove('i18n-wait'); });
 
   // ===== ВИДЕО-ОТЗЫВЫ (YouTube) =====
   // Вставьте ссылку на ролик YouTube в поле url. Подойдёт любой формат:
@@ -789,11 +1161,13 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
   //   https://www.youtube.com/watch?v=XXXXXXXXXXX
   //   https://www.youtube.com/shorts/XXXXXXXXXXX   (или просто ID ролика)
   // Пустой url = карточка показывает «Скоро». Можно добавлять/удалять записи.
+  /*i18n*/
   var YT_REVIEWS = [
     { url: "", name: "Маша", note: "Групповое обучение" },
     { url: "https://youtube.com/shorts/c3T5dpA28lc", name: "Анна", note: "Индивидуальное обучение" },
     { url: "https://youtube.com/shorts/VWJDphTjSGo", name: "Сергей и Настя", note: "Наставничество" }
   ];
+  /*/i18n*/
 
   // year
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -827,7 +1201,8 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     if(counted) return; counted = true;
     countEls.forEach(function(el){
       var target = parseInt(el.getAttribute('data-count'),10);
-      var suffix = el.getAttribute('data-suffix') || '';
+      var sfx = el.getAttribute('data-suffix') || '';
+      var suffix = /[А-Яа-яЁё]/.test(sfx) ? (sfx.charAt(0) === ' ' ? ' ' : '') + t(sfx.trim()) : sfx;
       var start = null, dur = 1400;
       function step(ts){
         if(!start) start = ts;
@@ -840,10 +1215,10 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
     });
   }
   var heroStats = document.querySelector('.hero-stats');
-  if(heroStats){
+  if(heroStats) ready.then(function(){
     var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ runCounters(); io2.disconnect(); } }); }, {threshold:0.4});
     io2.observe(heroStats);
-  }
+  });
 
   // FAQ accordion
   document.querySelectorAll('.q-head').forEach(function(head){
@@ -908,7 +1283,7 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
       var card = document.createElement('div');
       card.className = 'vcard';
       var media = id ? '<img src="https://img.youtube.com/vi/' + id + '/maxresdefault.jpg" alt="" onerror="this.onerror=null;this.src=\'https://img.youtube.com/vi/' + id + '/hqdefault.jpg\'">' : '';
-      var top = id ? '<span></span>' : '<span class="badge-soon">Скоро</span>';
+      var top = id ? '<span></span>' : '<span class="badge-soon">' + t('Скоро') + '</span>';
       card.innerHTML = media +
         '<div class="veil">' + top +
         '<div class="vmeta"><b>' + esc(r.name) + '</b><span>' + esc(r.note) + '</span></div></div>' +
@@ -922,60 +1297,297 @@ footer p{color:var(--muted-2);font-size:.9rem;max-width:340px}
 
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeLb(); closeVModal(); } });
 
-  // pricing buttons -> preselect plan in form
-  var planSelect = document.getElementById('plan');
-  document.querySelectorAll('[data-plan]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var val = btn.getAttribute('data-plan');
-      for(var i=0;i<planSelect.options.length;i++){
-        if(planSelect.options[i].text === val){ planSelect.selectedIndex = i; break; }
-      }
+  // ===== ОТКУДА ПРИШЁЛ ЧЕЛОВЕК: метки рекламы, последний переход, 30 дней =====
+  function store(k, v){ try{ if(v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+  var ATTR = (function(){
+    var q = new URLSearchParams(location.search), a = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'].forEach(function(k){ var v = q.get(k); if(v) a[k.replace('utm_', '')] = v.slice(0, 150); });
+    if(Object.keys(a).length){ a.ts = Date.now(); store('bm_attr', JSON.stringify(a)); return a; }
+    try{ var s = JSON.parse(store('bm_attr') || '{}'); return s.ts && Date.now() - s.ts < 30 * 864e5 ? s : {}; }catch(e){ return {}; }
+  })();
+  var VID = store('bm_vid');
+  if(!VID){ VID = Math.random().toString(36).slice(2) + Date.now().toString(36); store('bm_vid', VID); }
+  function cookie(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; }
+  function track(ev, p, o){ try{ if(window.fbq) window.fbq('track', ev, p || {}, o || {}); }catch(e){} }
+  function trackC(ev, p){ try{ if(window.fbq) window.fbq('trackCustom', ev, p || {}); }catch(e){} }
+  var PL = {
+    ru: { client: ['клиент', 'клиента', 'клиентов'], week: ['неделя', 'недели', 'недель'] },
+    uk: { client: ['клієнт', 'клієнти', 'клієнтів'], week: ['тиждень', 'тижні', 'тижнів'] }
+  };
+  function pl(n, k){ var a = n % 100, b = n % 10, f = PL[LANG][k]; return n + ' ' + f[a > 10 && a < 20 ? 2 : b === 1 ? 0 : b > 1 && b < 5 ? 1 : 2]; }
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+
+  // ===== ЦЕНЫ 2026: таймер до повышения; после дедлайна акция прячется сама =====
+  var END = new Date(CFG.deadline).getTime();
+  function promoOn(){ return Date.now() < END; }
+  var dlLeft = document.getElementById('dl-left');
+  function tickDeadline(){
+    var ms = END - Date.now();
+    if(ms <= 0){ document.documentElement.classList.add('promo-over'); return false; }
+    var d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5), m = Math.floor(ms % 36e5 / 6e4);
+    if(dlLeft) dlLeft.textContent = t('осталось') + ' ' + d + ' ' + t('дн.') + ' ' + h + ' ' + t('ч') + ' ' + (m < 10 ? '0' : '') + m + ' ' + t('мин');
+    return true;
+  }
+  if(tickDeadline()) ready.then(function(){ tickDeadline(); setInterval(tickDeadline, 30000); });
+
+  // ===== КВИЗ: 6 вопросов → контакты → подборка. Тексты — в блоке i18n (для словаря UA) =====
+  /*i18n*/
+  var PLANS = {
+    group:      { name: 'Групповое', price: 1900, old: 2500, month: 159, why: 'Твёрдая база с нуля: 10 дней теории и практики на моделях, сертификат и поддержка 24/7.' },
+    individual: { name: 'Индивидуальное', price: 2900, old: 3600, month: 242, why: 'Больше практики и свой график, первые клиенты и соцсети под ключ.' },
+    mentor:     { name: 'Наставничество', price: 5500, old: 6900, month: 459, why: 'Бизнес, личный бренд и реклама под ключ, план и сопровождение до лицензии.' },
+    salon:      { name: 'Салон под ключ', price: 0, why: 'Откроем многофункциональный салон — от локации и документов до команды и первых клиентов.' }
+  };
+  var STEPS = [
+    { k: 'exp', q: 'Какой у тебя опыт в бьюти?', o: [['none', '🌱 Нет опыта — хочу с нуля'], ['other', '💅 Мастер в другой сфере'], ['hair', '💇‍♀️ Уже работаю с волосами'], ['salon', '🏢 Есть свой салон или кабинет']] },
+    { k: 'goal', q: 'Что для тебя сейчас главное?', o: [['income', '💰 Новая профессия и доход'], ['check', '📈 Поднять чек и прайс'], ['free', '🗓️ Свободный график'], ['salon', '🏢 Открыть свой салон']] },
+    { k: 'state', q: 'В каком штате ты живёшь?', sub: 'Практика проходит очно в Чикаго — даты подберём так, чтобы было удобно приехать.' },
+    { k: 'start', q: 'Когда хочешь начать?', o: [['now', '🔥 В ближайший месяц'], ['soon', '📅 Через 2–3 месяца'], ['later', '👀 Пока присматриваюсь']] },
+    { k: 'plan', q: 'Какой формат ближе?', o: [['group', 'Групповое — $1900'], ['individual', 'Индивидуальное — $2900'], ['mentor', 'Наставничество — $5500'], ['salon', '🏢 Салон под ключ'], ['help', '🤔 Помогите выбрать']] },
+    { k: 'pay', q: 'Как удобнее оплатить?', o: [['full', '💳 Сразу полностью'], ['installment', '🗓️ Рассрочка Affirm / Klarna'], ['discuss', '💬 Обсудим на консультации']] }
+  ];
+  var PREFS = ['WhatsApp', 'Telegram', 'Звонок', 'SMS'];
+  var NOT_US = 'Пока не в США';
+  /*/i18n*/
+  var STATES = ('Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,District of Columbia,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming').split(',');
+
+  var qz = document.getElementById('qz'), qzBody = document.getElementById('qz-body');
+  var qzStep = document.getElementById('qz-step'), qzFill = document.getElementById('qz-fill');
+  var Q = { a: {}, i: 0, steps: STEPS, t0: 0, busy: false, sent: false, ok: false, rec: '' }, lastFocus = null;
+
+  function openQuiz(plan){
+    lastFocus = document.activeElement;
+    if(Q.sent || !Q.t0){ Q.a = {}; Q.t0 = Date.now(); }  // недосланные ответы сохраняем, отправленные — начинаем заново
+    var fixed = plan && PLANS[plan] ? plan : '';
+    if(fixed) Q.a.plan = fixed;
+    Q.steps = STEPS.filter(function(s){ return !(s.k === 'plan' && fixed); });
+    Q.i = 0; Q.sent = false; Q.ok = false; Q.busy = false;
+    qz.hidden = false;
+    document.documentElement.classList.add('qz-lock');
+    render();
+    trackC('QuizStart', { plan: fixed });
+  }
+  function closeQuiz(){
+    saveContact();
+    qz.hidden = true;
+    document.documentElement.classList.remove('qz-lock');
+    if(lastFocus && lastFocus.focus) try{ lastFocus.focus({ preventScroll: true }); }catch(e){}
+  }
+  function render(){
+    var n = Q.steps.length + 1, i = Q.i;
+    qzStep.textContent = i < n ? t('Шаг') + ' ' + (i + 1) + ' ' + t('из') + ' ' + n : t('Готово!');
+    qzFill.style.width = (i < n ? Math.round((i + 1) / (n + 1) * 100) : 100) + '%';
+    qzBody.style.animation = 'none'; void qzBody.offsetWidth; qzBody.style.animation = '';
+    if(i < Q.steps.length) renderStep(Q.steps[i]);
+    else if(i === Q.steps.length) renderContact();
+    else renderResult();
+    qzBody.scrollTop = 0;
+    var f = qzBody.querySelector('.qz-opt.on, .qz-opt, select, #qz-name, .btn');
+    if(f) try{ f.focus({ preventScroll: true }); }catch(e){}
+  }
+  function backBtn(){ return Q.i > 0 ? '<button type="button" class="qz-back" data-act="back">← ' + esc(t('Назад')) + '</button>' : ''; }
+  function renderStep(s){
+    var h = '<h3 class="qz-h" id="qz-title">' + esc(t(s.q)) + '</h3>' + (s.sub ? '<p class="qz-sub">' + esc(t(s.sub)) + '</p>' : '');
+    if(s.k === 'state'){
+      h += '<div class="field"><select id="qz-state" aria-label="' + esc(t(s.q)) + '"><option value="">' + esc(t('Выбери штат')) + '</option>' +
+        STATES.concat([NOT_US]).map(function(x){ return '<option value="' + esc(x) + '"' + (Q.a.state === x ? ' selected' : '') + '>' + esc(t(x)) + '</option>'; }).join('') +
+        '</select></div><div class="qz-err" id="qz-err" role="alert"></div>' +
+        '<button type="button" class="btn btn-primary" data-act="state">' + esc(t('Далее')) + ' →</button>';
+    } else {
+      h += '<div class="qz-opts">' + s.o.map(function(o){
+        return '<button type="button" class="qz-opt' + (Q.a[s.k] === o[0] ? ' on' : '') + '" data-v="' + o[0] + '">' + esc(t(o[1])) + '</button>';
+      }).join('') + '</div>';
+    }
+    qzBody.innerHTML = h + backBtn();
+  }
+  function renderContact(){
+    var pref = Q.a.pref || 'WhatsApp';
+    qzBody.innerHTML =
+      '<h3 class="qz-h" id="qz-title">' + esc(t('Почти готово! Куда прислать подборку?')) + '</h3>' +
+      '<p class="qz-sub">' + esc(t('Подберём формат, расскажем про график и рассрочку — и закрепим за тобой подарок 🎁')) + '</p>' +
+      '<form id="qz-form" novalidate>' +
+      '<div class="field"><label for="qz-name">' + esc(t('Имя')) + '</label><input id="qz-name" autocomplete="given-name" maxlength="60" placeholder="' + esc(t('Как тебя зовут')) + '" value="' + esc(Q.a.name || '') + '" /></div>' +
+      '<div class="field"><label for="qz-phone">' + esc(t('Телефон')) + '</label><input id="qz-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="22" placeholder="+1 (___) ___-____" value="' + esc(Q.a.phone || '') + '" /></div>' +
+      '<div class="field"><label>' + esc(t('Как удобнее связаться?')) + '</label><div class="qz-pref">' +
+      PREFS.map(function(p){ return '<label><input type="radio" name="pref" value="' + p + '"' + (pref === p ? ' checked' : '') + ' /><span>' + esc(t(p)) + '</span></label>'; }).join('') +
+      '</div></div>' +
+      '<div class="field" id="qz-tg-f"' + (pref === 'Telegram' ? '' : ' hidden') + '><label for="qz-tg">' + esc(t('Ник в Telegram (необязательно)')) + '</label><input id="qz-tg" autocomplete="off" maxlength="40" placeholder="@username" value="' + esc(Q.a.tg || '') + '" /></div>' +
+      '<div class="hp" aria-hidden="true"><input id="qz-web" name="website" tabindex="-1" autocomplete="off" /></div>' +
+      '<div class="qz-err" id="qz-err" role="alert"></div>' +
+      '<button class="btn btn-primary" type="submit" id="qz-send">' + esc(t('Получить подборку')) + ' 🎁</button>' +
+      '<p class="qz-legal">' + esc(t('Нажимая кнопку, вы соглашаетесь на звонок, SMS или сообщение в мессенджере по вашей заявке и с')) + ' <a href="privacy/" target="_blank" rel="noopener">' + esc(t('политикой конфиденциальности')) + '</a>. ' + esc(t('Согласие не обязательно для покупки, может взиматься плата оператора.')) + '</p>' +
+      '</form>' + backBtn();
+  }
+  function renderResult(){
+    var p = PLANS[Q.rec] || PLANS.individual, first = (Q.a.name || '').split(/\s+/)[0];
+    var price = p.price
+      ? '<div class="pp">$' + p.price + (promoOn() ? '<s>$' + p.old + '</s>' : '') + '</div><p>' + (promoOn() ? esc(t('Цена 2026 года — до 31 декабря')) + ' · ' : '') + esc(t('рассрочка от')) + ' ~$' + p.month + esc(t('/мес')) + '</p>'
+      : '<div class="pp">' + esc(t('Индивидуально')) + '</div>';
+    var cal = CFG.calendly + '?name=' + encodeURIComponent(Q.a.name || '') + '&utm_source=site&utm_medium=quiz&utm_campaign=' + encodeURIComponent(ATTR.campaign || 'organic');
+    qzBody.innerHTML =
+      '<div class="qz-res"><div class="big">' + (Q.ok ? '🎉' : '💬') + '</div>' +
+      '<h3 class="qz-h" id="qz-title">' + esc(Q.ok ? t('Готово') + (first ? ', ' + first : '') + '!' : t('Остался один шаг')) + '</h3>' +
+      '<p class="qz-sub">' + esc(Q.ok ? t('Заявка у нас. Свяжемся с тобой в ближайшее время — по телефону или в мессенджере.')
+        : CFG.leadsUrl ? t('Заявка не отправилась автоматически. Напиши нам в Telegram или выбери время консультации — это займёт 10 секунд.')
+        : t('Выбери удобное время консультации или напиши нам в Telegram — так мы точно получим твою заявку.')) + '</p></div>' +
+      '<div class="qz-card"><div class="pn">' + esc(t('Твой формат')) + ': ' + esc(t(p.name)) + '</div>' + price + '<p>' + esc(t(p.why)) + '</p></div>' +
+      '<div class="qz-gift-ok">🎁 ' + esc(Q.ok ? t('Подарок закреплён: стартовый набор мастера — при записи на обучение.') : t('Подарок ждёт: напиши нам, чтобы закрепить стартовый набор мастера.')) + '</div>' +
+      '<div class="qz-acts"><a class="btn btn-primary" href="' + esc(cal) + '" target="_blank" rel="noopener" data-contact="calendly">📅 ' + esc(t('Выбрать время консультации')) + '</a>' +
+      '<a class="btn btn-ghost" href="' + esc(CFG.bot) + '" target="_blank" rel="noopener" data-contact="telegram">✈️ ' + esc(t('Написать в Telegram')) + '</a></div>';
+  }
+  function saveContact(){
+    var n = document.getElementById('qz-name'), ph = document.getElementById('qz-phone'), tg = document.getElementById('qz-tg');
+    var pf = qzBody.querySelector('input[name=pref]:checked');
+    if(n) Q.a.name = n.value.trim();
+    if(ph) Q.a.phone = ph.value.trim();
+    if(tg) Q.a.tg = tg.value.trim();
+    if(pf) Q.a.pref = pf.value;
+  }
+  function label(k){
+    var s = STEPS.filter(function(x){ return x.k === k; })[0], v = Q.a[k];
+    var o = s && s.o ? s.o.filter(function(x){ return x[0] === v; })[0] : null;
+    return o ? o[1].replace(/^[^0-9A-Za-zА-Яа-яЁё$]+/, '') : (v || '');
+  }
+  function recommend(){
+    var a = Q.a;
+    if(a.goal === 'salon') return 'salon';
+    if(a.exp === 'salon') return 'mentor';
+    if(a.exp === 'hair' || a.goal === 'check') return 'individual';
+    return a.exp === 'none' ? 'group' : 'individual';
+  }
+  // телефон: США — 10 цифр (или 11 с единицей), другие страны — с «+» и кодом страны
+  function phoneOk(v){ var d = v.replace(/\D/g, ''); return /^\s*\+(?!1)/.test(v) ? d.length >= 8 && d.length <= 15 : d.length === 10 || (d.length === 11 && d.charAt(0) === '1'); }
+  function fmtPhone(v){
+    if(/^\s*\+(?!1)/.test(v)) return '+' + v.replace(/\D/g, '').slice(0, 15);
+    var d = v.replace(/\D/g, '');
+    if(d.charAt(0) === '1') d = d.slice(1);
+    d = d.slice(0, 10);
+    if(!d) return v.replace(/[^\d+]/g, '');
+    return '+1 (' + d.slice(0, 3) + (d.length > 3 ? ') ' + d.slice(3, 6) : '') + (d.length > 6 ? '-' + d.slice(6) : '');
+  }
+  function post(data){
+    return fetch(CFG.leadsUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
+      .then(function(r){ return r.json(); })
+      .then(function(r){ if(!r || !r.ok) throw new Error((r && r.error) || 'fail'); return r; });
+  }
+  function submitLead(){
+    saveContact();
+    var err = document.getElementById('qz-err');
+    if((Q.a.name || '').length < 2){ err.textContent = t('Напиши, пожалуйста, имя'); return; }
+    if(!phoneOk(Q.a.phone || '')){ err.textContent = t('Проверь номер телефона'); return; }
+    if(Q.busy) return;
+    Q.busy = true;
+    var btn = document.getElementById('qz-send');
+    btn.disabled = true; btn.textContent = t('Отправляем…');
+    Q.rec = Q.a.plan && Q.a.plan !== 'help' ? Q.a.plan : recommend();
+    var p = PLANS[Q.rec], eid = 'bm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    var data = {
+      event_id: eid, name: Q.a.name, phone: Q.a.phone, pref: Q.a.pref || '', tg: Q.a.pref === 'Telegram' ? Q.a.tg : '',
+      plan: (Q.a.plan === 'help' ? 'Помогите выбрать → ' : '') + p.name + (p.price ? ' — $' + p.price : ''),
+      exp: label('exp'), goal: label('goal'), state: Q.a.state || '', start: label('start'), pay: label('pay'),
+      gift: 1, lang: LANG, page: location.href.split('#')[0].slice(0, 300), ref: (document.referrer || '').slice(0, 200),
+      utm: { source: ATTR.source || '', medium: ATTR.medium || '', campaign: ATTR.campaign || '', content: ATTR.content || '', term: ATTR.term || '' },
+      fbp: cookie('_fbp'), fbc: cookie('_fbc') || (ATTR.fbclid ? 'fb.1.' + (ATTR.ts || Date.now()) + '.' + ATTR.fbclid : ''),
+      vid: VID, ua: (navigator.userAgent || '').slice(0, 300), elapsed: Date.now() - Q.t0,
+      website: (document.getElementById('qz-web') || {}).value || ''
+    };
+    var finish = function(ok){
+      Q.busy = false; Q.sent = ok; Q.ok = ok;
+      if(ok){ track('Lead', { content_name: 'quiz', content_category: Q.rec }, { eventID: eid }); store('bm_gift', '1'); gift.classList.add('done'); }
+      Q.i = Q.steps.length + 1; render();
+    };
+    if(!CFG.leadsUrl) return finish(false);
+    // повтор с тем же event_id: если первый ответ просто потерялся, сервер не запишет заявку дважды
+    post(data).then(function(){ finish(true); }, function(){
+      setTimeout(function(){ post(data).then(function(){ finish(true); }, function(){ finish(false); }); }, 1200);
+    });
+  }
+
+  qzBody.addEventListener('click', function(e){
+    var o = e.target.closest('.qz-opt'), act = e.target.closest('[data-act]');
+    if(o && !Q.busy){
+      Q.a[Q.steps[Q.i].k] = o.getAttribute('data-v');
+      qzBody.querySelectorAll('.qz-opt').forEach(function(x){ x.classList.toggle('on', x === o); });
+      Q.busy = true;
+      setTimeout(function(){ Q.busy = false; Q.i++; render(); }, 170);
+    } else if(act && act.getAttribute('data-act') === 'back' && !Q.busy){
+      saveContact(); Q.i = Math.max(0, Q.i - 1); render();
+    } else if(act && act.getAttribute('data-act') === 'state'){
+      var sel = document.getElementById('qz-state');
+      if(!sel.value){ document.getElementById('qz-err').textContent = t('Выбери штат из списка'); return; }
+      Q.a.state = sel.value; Q.i++; render();
+    }
+  });
+  qzBody.addEventListener('change', function(e){
+    if(e.target.name === 'pref'){ var f = document.getElementById('qz-tg-f'); if(f) f.hidden = e.target.value !== 'Telegram'; }
+  });
+  qzBody.addEventListener('input', function(e){
+    if(e.target.id === 'qz-phone' && String(e.inputType || '').indexOf('delete') !== 0) e.target.value = fmtPhone(e.target.value);
+  });
+  qzBody.addEventListener('submit', function(e){ e.preventDefault(); submitLead(); });
+  document.getElementById('qz-x').addEventListener('click', closeQuiz);
+  qz.addEventListener('click', function(e){ if(e.target === qz) closeQuiz(); });
+
+  // кнопки «Записаться», «Подобрать», плавающая ✍️ → квиз; клики по контактам → событие Contact
+  document.addEventListener('click', function(e){
+    var q = e.target.closest && e.target.closest('[data-quiz]');
+    if(q){ e.preventDefault(); openQuiz(q.getAttribute('data-plan')); return; }
+    var c = e.target.closest && e.target.closest('[data-contact]');
+    if(c) track('Contact', { content_name: c.getAttribute('data-contact') });
+  });
+  // ссылка из рекламы сразу в квиз: …/#quiz или ?quiz=1 (&plan=group|individual|mentor|salon)
+  if(location.hash === '#quiz' || /[?&]quiz=1(&|$)/.test(location.search)) ready.then(function(){
+    setTimeout(function(){ openQuiz(new URLSearchParams(location.search).get('plan')); }, 400);
+  });
+
+  // ===== ПОДАРОК =====
+  var gift = document.getElementById('gift'), gpop = document.getElementById('gift-pop');
+  if(store('bm_gift') === '1') gift.classList.add('done');
+  gift.addEventListener('click', function(){ gpop.hidden = !gpop.hidden; if(!gpop.hidden) trackC('GiftOpen'); });
+  document.getElementById('gift-x').addEventListener('click', function(){ gpop.hidden = true; });
+  document.getElementById('gift-go').addEventListener('click', function(){ gpop.hidden = true; openQuiz(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ if(!qz.hidden) closeQuiz(); gpop.hidden = true; } });
+
+  // ===== КАЛЬКУЛЯТОР ОКУПАЕМОСТИ (пример, не гарантия) =====
+  var cN = document.getElementById('c-n'), cC = document.getElementById('c-c'), cPrice = 1900;
+  function calc(){
+    var n = +cN.value, c = +cC.value, clients = Math.ceil(cPrice / (c * 0.8)), weeks = Math.max(1, Math.ceil(clients / n));
+    document.getElementById('c-n-v').textContent = n;
+    document.getElementById('c-c-v').textContent = money(c);
+    document.getElementById('c-m').textContent = money(Math.round(n * c * 4.33 / 10) * 10);
+    document.getElementById('c-pb').textContent = pl(clients, 'client');
+    document.getElementById('c-w').textContent = '≈ ' + pl(weeks, 'week') + ' ' + t('работы');
+  }
+  if(cN && cC){
+    cN.addEventListener('input', calc);
+    cC.addEventListener('input', calc);
+    document.querySelectorAll('.cp').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.cp').forEach(function(x){ x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        cPrice = +b.getAttribute('data-p'); calc();
+      });
+    });
+    ready.then(calc);
+  }
+
+  // ===== ЯЗЫК: RU / UA =====
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-setlang') === LANG);
+    b.addEventListener('click', function(){
+      var l = b.getAttribute('data-setlang');
+      if(l === LANG) return;
+      store('bm_lang', l);
+      var u = new URL(location.href); u.searchParams.delete('lang'); u.hash = '';
+      location.replace(u.toString());
     });
   });
 
-  // lead form -> Telegram (с запасным вариантом на e-mail)
-  var form = document.getElementById('lead-form');
-  var okBox = document.getElementById('form-ok');
-  var submitBtn = form.querySelector('button[type="submit"]');
-
-  function buildText(d){
-    return '🔥 Новая заявка — Beauty Mafia Hair Academy\n\n' +
-           '👤 Имя: ' + d.name + '\n' +
-           '📞 Контакт: ' + d.contact + '\n' +
-           '🎓 Формат: ' + d.plan + '\n' +
-           '💬 Комментарий: ' + (d.msg || '—');
+  // просмотр цен → ViewContent (один раз)
+  var pricing = document.getElementById('pricing');
+  if(pricing && 'IntersectionObserver' in window){
+    var io3 = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ track('ViewContent', { content_name: 'pricing' }); io3.disconnect(); } }, { threshold: 0.3 });
+    io3.observe(pricing);
   }
-  function showOk(){ form.style.display = 'none'; okBox.classList.add('show'); }
-  function fallbackMail(d){
-    var subject = 'Заявка на обучение — Beauty Mafia Hair Academy';
-    window.location.href = 'mailto:' + LEAD_EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(buildText(d));
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var d = {
-      name: document.getElementById('name').value.trim(),
-      contact: document.getElementById('contact').value.trim(),
-      plan: planSelect.value,
-      msg: document.getElementById('msg').value.trim()
-    };
-
-    // Telegram не настроен -> отправляем на e-mail
-    if(!TG_BOT_TOKEN || !TG_CHAT_ID){ fallbackMail(d); showOk(); return; }
-
-    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…'; }
-    fetch('https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: buildText(d), disable_web_page_preview: true })
-    })
-    .then(function(r){ return r.json(); })
-    .then(function(res){ if(res && res.ok){ showOk(); } else { fallbackMail(d); showOk(); } })
-    .catch(function(){ fallbackMail(d); showOk(); })
-    .finally(function(){ if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = 'Отправить заявку'; } });
-  });
 })();
 </script>
 </body>
